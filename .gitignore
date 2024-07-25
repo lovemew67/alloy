@@ -32,3 +32,5 @@ node_modules
 # file of the pair will detect a dirty work tree and detect the wrong tag name.
 .tag-only
 .image-tag
+
+*.bin

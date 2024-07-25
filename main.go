@@ -1,11 +1,7 @@
 package main
 
 import (
-	"github.com/prometheus/client_golang/prometheus"
-
 	"github.com/grafana/alloy/internal/alloycli"
-	"github.com/grafana/alloy/internal/build"
-
 	// Register Prometheus SD components
 	_ "github.com/grafana/loki/v3/clients/pkg/promtail/discovery/consulagent"
 	_ "github.com/prometheus/prometheus/discovery/install"
@@ -20,16 +16,6 @@ import (
 	// Embed application manifest for Windows builds
 	_ "github.com/grafana/alloy/internal/winmanifest"
 )
-
-func init() {
-	// If the build version wasn't set by the build process, we'll set it based
-	// on the version string in VERSION.
-	if build.Version == "" || build.Version == "v0.0.0" {
-		build.Version = fallbackVersion()
-	}
-
-	prometheus.MustRegister(build.NewCollector("alloy"))
-}
 
 func main() {
 	alloycli.Run()
