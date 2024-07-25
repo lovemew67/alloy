@@ -768,7 +768,7 @@ replace (
 replace github.com/github/smimesign => github.com/grafana/smimesign v0.2.1-0.20220408144937-2a5adf3481d3
 
 // Submodules.
-replace github.com/grafana/alloy/syntax => ./syntax
+replace github.com/grafana/alloy/syntax => ./internal/alloy/syntax
 
 // Required to avoid an ambiguous import with github.com/tencentcloud/tencentcloud-sdk-go
 exclude github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.194
