@@ -1,0 +1,20 @@
+package podmonitors
+
+import (
+	"github.com/grafana/alloy/internal/alloy/component"
+	"github.com/grafana/alloy/internal/alloy/component/prometheus/operator"
+	"github.com/grafana/alloy/internal/alloy/component/prometheus/operator/common"
+	"github.com/grafana/alloy/internal/alloy/featuregate"
+)
+
+func init() {
+	component.Register(component.Registration{
+		Name:      "prometheus.operator.podmonitors",
+		Stability: featuregate.StabilityGenerallyAvailable,
+		Args:      operator.Arguments{},
+
+		Build: func(opts component.Options, args component.Arguments) (component.Component, error) {
+			return common.New(opts, args, common.KindPodMonitor)
+		},
+	})
+}

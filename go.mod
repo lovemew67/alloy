@@ -743,7 +743,7 @@ replace (
 
 	// TODO(rfratto): Remove this directive alongside internal/etc once the
 	// datadogreceiver component is contributed upstream.
-	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/datadogreceiver => ./internal/etc/datadogreceiver
+	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/datadogreceiver => ./internal/alloy/etc/datadogreceiver
 
 	github.com/prometheus-community/postgres_exporter => github.com/grafana/postgres_exporter v0.15.1-0.20240417113938-9358270470dd
 
